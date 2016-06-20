@@ -12,6 +12,8 @@ RET=1
 while [[ RET -ne 0 ]]; do
 	sleep 5
 	mysql -uroot -e "CREATE DATABASE $1"
+
+	mysql -uroot $1 < /mysql.dump.sql
 	RET=$?
 done
 
