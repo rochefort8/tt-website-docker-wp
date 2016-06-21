@@ -6,3 +6,7 @@ docker run -d -p 9000:80 -v $(pwd)/wp-content:/app/wp-content --name=tt-website 
 
 # Stop
 docker rm -f tt-website
+
+# Export mysql data
+docker exec -t tt-website mysqldump -u root wordpress > ./mysql.dump.sql
+
