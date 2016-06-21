@@ -29,6 +29,8 @@ ADD mysql.dump.sql /mysql.dump.sql
 ADD create_db.sh /create_db.sh
 RUN chmod +x /*.sh
 
+# More updates
+ADD system/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 EXPOSE 80 3306
 CMD ["/run.sh"]
